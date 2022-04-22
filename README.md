@@ -5,7 +5,7 @@ Here is a bunch of python code for accessing CMIP6 data on the jasmin research c
 It may also work well on other clusters, you'd have to check how the CMIP6 data directory structure works.
 
 The files are as follows: 
-CMIP_functions.py  
+"CMIP_functions.py" 
 CMIP_inputs.py  
 grid_set.py  
 Essential modules for finding files and reading them. There's lots of regridding too.
