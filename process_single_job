@@ -1,0 +1,12 @@
+#!/bin/bash 
+### #SBATCH --partition=short-serial 
+#SBATCH --partition=test
+#SBATCH -o run_outs/%j.out 
+#SBATCH -e run_outs/%j.err
+#SBATCH --time=00:25:00  
+### #SBATCH --time=01:00:00  
+#### 100 years of low res should be done in 4 hours
+today=$(date +"%Y-%m-%d-%H-%M")
+
+# executable 
+python Process_CMIP6.py proc_inputs/proc_input2.txt  run_outs/process_out_${today}

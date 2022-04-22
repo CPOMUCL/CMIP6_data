@@ -1,0 +1,84 @@
+OPTION: grid orientation: 3
+OPTION: making a seperate swflux grid
+CESM2 Found 24 dates
+Got variables for a grid
+['lat', 'lon']
+Got a grid res =  384  x  320
+Note that all grid info is in nx x ny grids, whilst data is in nx x ny
+Loaded a grid: ./Ease_reduced_for_Eco.npz
+2015-01
+Filling SImon/siconc buffer from 2015-01-01 +  12
+Ice Concentration av: 0.573
+Ice Extent (10^6 Km^2): 1.08e+02
+2015-02
+Ice Concentration av: 0.595
+Ice Extent (10^6 Km^2): 1.12e+02
+2015-03
+Ice Concentration av: 0.613
+Ice Extent (10^6 Km^2): 1.15e+02
+2015-04
+Ice Concentration av: 0.597
+Ice Extent (10^6 Km^2): 1.12e+02
+2015-05
+Ice Concentration av: 0.529
+Ice Extent (10^6 Km^2): 99.2
+2015-06
+Ice Concentration av: 0.438
+Ice Extent (10^6 Km^2): 82.2
+2015-07
+Ice Concentration av: 0.276
+Ice Extent (10^6 Km^2): 51.9
+2015-08
+Ice Concentration av: 0.0904
+Ice Extent (10^6 Km^2): 17.0
+2015-09
+Ice Concentration av: 0.0504
+Ice Extent (10^6 Km^2): 9.47
+2015-10
+Ice Concentration av: 0.169
+Ice Extent (10^6 Km^2): 31.8
+2015-11
+Ice Concentration av: 0.383
+Ice Extent (10^6 Km^2): 71.9
+2015-12
+Ice Concentration av: 0.516
+Ice Extent (10^6 Km^2): 96.9
+2016-01
+Filling SImon/siconc buffer from 2016-01-01 +  12
+Ice Concentration av: 0.575
+Ice Extent (10^6 Km^2): 1.08e+02
+2016-02
+Ice Concentration av: 0.607
+Ice Extent (10^6 Km^2): 1.14e+02
+2016-03
+Ice Concentration av: 0.621
+Ice Extent (10^6 Km^2): 1.17e+02
+2016-04
+Ice Concentration av: 0.599
+Ice Extent (10^6 Km^2): 1.12e+02
+2016-05
+Ice Concentration av: 0.542
+Ice Extent (10^6 Km^2): 1.02e+02
+2016-06
+Ice Concentration av: 0.456
+Ice Extent (10^6 Km^2): 85.6
+2016-07
+Ice Concentration av: 0.31
+Ice Extent (10^6 Km^2): 58.2
+2016-08
+Ice Concentration av: 0.113
+Ice Extent (10^6 Km^2): 21.2
+2016-09
+Ice Concentration av: 0.0668
+Ice Extent (10^6 Km^2): 12.5
+2016-10
+Ice Concentration av: 0.25
+Ice Extent (10^6 Km^2): 46.9
+2016-11
+Ice Concentration av: 0.413
+Ice Extent (10^6 Km^2): 77.6
+2016-12
+Ice Concentration av: 0.511
+Ice Extent (10^6 Km^2): 96.0
+Saving in ./Outputs//CMIP_proc_CESM2_r4i1p1f1_ssp585_2015_2016.nc
+Success!

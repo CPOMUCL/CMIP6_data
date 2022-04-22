@@ -1,0 +1,13 @@
+#!/bin/bash 
+#SBATCH --partition=test
+#SBATCH --job-name=C6_batch
+#SBATCH -o batch_run_outs/%A_%a.out
+#SBATCH -e batch_run_outs/%A_%a.err
+#SBATCH --time=00:20:00
+####SBATCH --array=1-2
+#####SBATCH --array=#SBATCH --array=3,6,9,30,28,20,19
+#SBATCH --array=1,2
+today=$(date +"%Y-%m-%d-%H-%M")
+
+### example: Rscript TestRFile.R datset${SLURM_ARRAY_TASK_ID}.csv
+python Process_CMIP6.py proc_inputs/proc_input${SLURM_ARRAY_TASK_ID}.txt batch_run_outs/${today}_process_out_${SLURM_ARRAY_TASK_ID}

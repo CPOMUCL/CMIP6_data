@@ -1,0 +1,226 @@
+OPTION: grid orientation: 1
+OPTION: making a seperate swflux grid
+CanESM5 Found 70 dates
+Got variables for a grid
+['latitude', 'longitude']
+Got a grid res =  360  x  291
+Note that all grid info is in nx x ny grids, whilst data is in nx x ny
+Loaded a grid: ./Ease_reduced_for_Eco.npz
+2015-01
+Filling SImon/siconc buffer from 2015-01-01 +  12
+Ice Concentration av: 0.577
+Ice Extent (10^6 Km^2): 1.12e+02
+2015-02
+Ice Concentration av: 0.623
+Ice Extent (10^6 Km^2): 1.21e+02
+2015-03
+Ice Concentration av: 0.626
+Ice Extent (10^6 Km^2): 1.21e+02
+2015-04
+Ice Concentration av: 0.611
+Ice Extent (10^6 Km^2): 1.18e+02
+2015-05
+Ice Concentration av: 0.549
+Ice Extent (10^6 Km^2): 1.06e+02
+2015-06
+Ice Concentration av: 0.437
+Ice Extent (10^6 Km^2): 84.8
+2015-07
+Ice Concentration av: 0.283
+Ice Extent (10^6 Km^2): 55.0
+2015-08
+Ice Concentration av: 0.191
+Ice Extent (10^6 Km^2): 36.9
+2015-09
+Ice Concentration av: 0.189
+Ice Extent (10^6 Km^2): 36.6
+2015-10
+Ice Concentration av: 0.284
+Ice Extent (10^6 Km^2): 55.0
+2015-11
+Ice Concentration av: 0.403
+Ice Extent (10^6 Km^2): 78.2
+2015-12
+Ice Concentration av: 0.49
+Ice Extent (10^6 Km^2): 94.9
+2016-01
+Filling SImon/siconc buffer from 2016-01-01 +  12
+Ice Concentration av: 0.576
+Ice Extent (10^6 Km^2): 1.12e+02
+2016-02
+Ice Concentration av: 0.608
+Ice Extent (10^6 Km^2): 1.18e+02
+2016-03
+Ice Concentration av: 0.619
+Ice Extent (10^6 Km^2): 1.2e+02
+2016-04
+Ice Concentration av: 0.598
+Ice Extent (10^6 Km^2): 1.16e+02
+2016-05
+Ice Concentration av: 0.529
+Ice Extent (10^6 Km^2): 1.03e+02
+2016-06
+Ice Concentration av: 0.415
+Ice Extent (10^6 Km^2): 80.5
+2016-07
+Ice Concentration av: 0.29
+Ice Extent (10^6 Km^2): 56.3
+2016-08
+Ice Concentration av: 0.188
+Ice Extent (10^6 Km^2): 36.4
+2016-09
+Ice Concentration av: 0.194
+Ice Extent (10^6 Km^2): 37.6
+2016-10
+Ice Concentration av: 0.299
+Ice Extent (10^6 Km^2): 58.0
+2016-11
+Ice Concentration av: 0.399
+Ice Extent (10^6 Km^2): 77.3
+2016-12
+Ice Concentration av: 0.483
+Ice Extent (10^6 Km^2): 93.5
+2017-01
+Filling SImon/siconc buffer from 2017-01-01 +  12
+Ice Concentration av: 0.567
+Ice Extent (10^6 Km^2): 1.1e+02
+2017-02
+Ice Concentration av: 0.605
+Ice Extent (10^6 Km^2): 1.17e+02
+2017-03
+Ice Concentration av: 0.612
+Ice Extent (10^6 Km^2): 1.19e+02
+2017-04
+Ice Concentration av: 0.594
+Ice Extent (10^6 Km^2): 1.15e+02
+2017-05
+Ice Concentration av: 0.52
+Ice Extent (10^6 Km^2): 1.01e+02
+2017-06
+Ice Concentration av: 0.386
+Ice Extent (10^6 Km^2): 74.8
+2017-07
+Ice Concentration av: 0.254
+Ice Extent (10^6 Km^2): 49.2
+2017-08
+Ice Concentration av: 0.167
+Ice Extent (10^6 Km^2): 32.3
+2017-09
+Ice Concentration av: 0.165
+Ice Extent (10^6 Km^2): 32.0
+2017-10
+Ice Concentration av: 0.243
+Ice Extent (10^6 Km^2): 47.0
+2017-11
+Ice Concentration av: 0.372
+Ice Extent (10^6 Km^2): 72.2
+2017-12
+Ice Concentration av: 0.48
+Ice Extent (10^6 Km^2): 93.0
+2018-01
+Filling SImon/siconc buffer from 2018-01-01 +  12
+Ice Concentration av: 0.546
+Ice Extent (10^6 Km^2): 1.06e+02
+2018-02
+Ice Concentration av: 0.585
+Ice Extent (10^6 Km^2): 1.13e+02
+2018-03
+Ice Concentration av: 0.595
+Ice Extent (10^6 Km^2): 1.15e+02
+2018-04
+Ice Concentration av: 0.565
+Ice Extent (10^6 Km^2): 1.09e+02
+2018-05
+Ice Concentration av: 0.499
+Ice Extent (10^6 Km^2): 96.8
+2018-06
+Ice Concentration av: 0.4
+Ice Extent (10^6 Km^2): 77.5
+2018-07
+Ice Concentration av: 0.261
+Ice Extent (10^6 Km^2): 50.6
+2018-08
+Ice Concentration av: 0.144
+Ice Extent (10^6 Km^2): 27.9
+2018-09
+Ice Concentration av: 0.135
+Ice Extent (10^6 Km^2): 26.2
+2018-10
+Ice Concentration av: 0.226
+Ice Extent (10^6 Km^2): 43.8
+2018-11
+Ice Concentration av: 0.358
+Ice Extent (10^6 Km^2): 69.5
+2018-12
+Ice Concentration av: 0.462
+Ice Extent (10^6 Km^2): 89.6
+2019-01
+Filling SImon/siconc buffer from 2019-01-01 +  12
+Ice Concentration av: 0.525
+Ice Extent (10^6 Km^2): 1.02e+02
+2019-02
+Ice Concentration av: 0.565
+Ice Extent (10^6 Km^2): 1.09e+02
+2019-03
+Ice Concentration av: 0.583
+Ice Extent (10^6 Km^2): 1.13e+02
+2019-04
+Ice Concentration av: 0.555
+Ice Extent (10^6 Km^2): 1.08e+02
+2019-05
+Ice Concentration av: 0.484
+Ice Extent (10^6 Km^2): 93.9
+2019-06
+Ice Concentration av: 0.381
+Ice Extent (10^6 Km^2): 73.9
+2019-07
+Ice Concentration av: 0.261
+Ice Extent (10^6 Km^2): 50.5
+2019-08
+Ice Concentration av: 0.18
+Ice Extent (10^6 Km^2): 34.9
+2019-09
+Ice Concentration av: 0.168
+Ice Extent (10^6 Km^2): 32.5
+2019-10
+Ice Concentration av: 0.24
+Ice Extent (10^6 Km^2): 46.5
+2019-11
+Ice Concentration av: 0.341
+Ice Extent (10^6 Km^2): 66.2
+2019-12
+Ice Concentration av: 0.432
+Ice Extent (10^6 Km^2): 83.7
+2020-01
+Filling SImon/siconc buffer from 2020-01-01 +  12
+Ice Concentration av: 0.529
+Ice Extent (10^6 Km^2): 1.03e+02
+2020-02
+Ice Concentration av: 0.588
+Ice Extent (10^6 Km^2): 1.14e+02
+2020-03
+Ice Concentration av: 0.597
+Ice Extent (10^6 Km^2): 1.16e+02
+2020-04
+Ice Concentration av: 0.58
+Ice Extent (10^6 Km^2): 1.12e+02
+2020-05
+Ice Concentration av: 0.491
+Ice Extent (10^6 Km^2): 95.1
+2020-06
+Ice Concentration av: 0.371
+Ice Extent (10^6 Km^2): 71.9
+2020-07
+Ice Concentration av: 0.249
+Ice Extent (10^6 Km^2): 48.3
+2020-08
+Ice Concentration av: 0.152
+Ice Extent (10^6 Km^2): 29.4
+2020-09
+Ice Concentration av: 0.148
+Ice Extent (10^6 Km^2): 28.7
+2020-10
+Ice Concentration av: 0.236
+Ice Extent (10^6 Km^2): 45.8
+Saving in ./Outputs//CMIP_proc_CanESM5_r1i1p2f1_ssp585_2015_2020.nc
+Success!

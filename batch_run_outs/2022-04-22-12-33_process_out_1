@@ -1,0 +1,84 @@
+OPTION: grid orientation: 1
+OPTION: making a seperate swflux grid
+CanESM5 Found 24 dates
+Got variables for a grid
+['latitude', 'longitude']
+Got a grid res =  360  x  291
+Note that all grid info is in nx x ny grids, whilst data is in nx x ny
+Loaded a grid: ./Ease_reduced_for_Eco.npz
+2015-01
+Filling SImon/siconc buffer from 2015-01-01 +  12
+Ice Concentration av: 0.577
+Ice Extent (10^6 Km^2): 1.12e+02
+2015-02
+Ice Concentration av: 0.623
+Ice Extent (10^6 Km^2): 1.21e+02
+2015-03
+Ice Concentration av: 0.626
+Ice Extent (10^6 Km^2): 1.21e+02
+2015-04
+Ice Concentration av: 0.611
+Ice Extent (10^6 Km^2): 1.18e+02
+2015-05
+Ice Concentration av: 0.549
+Ice Extent (10^6 Km^2): 1.06e+02
+2015-06
+Ice Concentration av: 0.437
+Ice Extent (10^6 Km^2): 84.8
+2015-07
+Ice Concentration av: 0.283
+Ice Extent (10^6 Km^2): 55.0
+2015-08
+Ice Concentration av: 0.191
+Ice Extent (10^6 Km^2): 36.9
+2015-09
+Ice Concentration av: 0.189
+Ice Extent (10^6 Km^2): 36.6
+2015-10
+Ice Concentration av: 0.284
+Ice Extent (10^6 Km^2): 55.0
+2015-11
+Ice Concentration av: 0.403
+Ice Extent (10^6 Km^2): 78.2
+2015-12
+Ice Concentration av: 0.49
+Ice Extent (10^6 Km^2): 94.9
+2016-01
+Filling SImon/siconc buffer from 2016-01-01 +  12
+Ice Concentration av: 0.576
+Ice Extent (10^6 Km^2): 1.12e+02
+2016-02
+Ice Concentration av: 0.608
+Ice Extent (10^6 Km^2): 1.18e+02
+2016-03
+Ice Concentration av: 0.619
+Ice Extent (10^6 Km^2): 1.2e+02
+2016-04
+Ice Concentration av: 0.598
+Ice Extent (10^6 Km^2): 1.16e+02
+2016-05
+Ice Concentration av: 0.529
+Ice Extent (10^6 Km^2): 1.03e+02
+2016-06
+Ice Concentration av: 0.415
+Ice Extent (10^6 Km^2): 80.5
+2016-07
+Ice Concentration av: 0.29
+Ice Extent (10^6 Km^2): 56.3
+2016-08
+Ice Concentration av: 0.188
+Ice Extent (10^6 Km^2): 36.4
+2016-09
+Ice Concentration av: 0.194
+Ice Extent (10^6 Km^2): 37.6
+2016-10
+Ice Concentration av: 0.299
+Ice Extent (10^6 Km^2): 58.0
+2016-11
+Ice Concentration av: 0.399
+Ice Extent (10^6 Km^2): 77.3
+2016-12
+Ice Concentration av: 0.483
+Ice Extent (10^6 Km^2): 93.5
+Saving in ./Outputs//CMIP_proc_CanESM5_r1i1p2f1_ssp585_2015_2016.nc
+Success!

@@ -1,0 +1,6 @@
+CMIP processing input option file
+CMIP6_path: /badc/cmip6/data/CMIP6/ScenarioMIP/NCAR/CESM2/ssp585/r4i1p1f1
+Output_path: ./Outputs/
+orientation_option: 3
+Extra options go after here
+swflux_grid: 1
