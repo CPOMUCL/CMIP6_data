@@ -30,9 +30,19 @@ class grid_set:
 #                 inshape = x.shape
 #                 if np.shape()
             def tempm(x,y):
+                if type(x) == list:
+                    x = np.array(x)
+                    y = np.array(y)
                 inshape = np.shape(x)
+                if inshape == ():
+                    x = np.array(x)
+                    y = np.array(y)
+                    inshape = np.shape(x)
                 xy =  mplot.transform_points(proj_cart,x,y) 
-                if np.shape(inshape)[0] == 1: ### 1d input:
+                if np.shape(inshape)[0] == 0: ### 0d input:
+                    x = xy[0,0]
+                    y = xy[0,1]
+                elif np.shape(inshape)[0] == 1: ### 1d input:
                     x = xy[:,0]
                     y = xy[:,1]
                 else:
@@ -56,15 +66,30 @@ class grid_set:
         self.gridinfo = False
         self.masked = False
         self.data = False
+    
+    @property
+    def shape(self):
+        return (self.m,self.n)
         
     def reproject(self,mplot):
         if 'crs' in str(type(mplot)):
             
             ### need lon/lat to x,y
             def tempm(x,y):
+                if type(x) == list:
+                    x = np.array(x)
+                    y = np.array(y)
                 inshape = np.shape(x)
+                if inshape == ():
+#                     print('reshaping')
+                    x = np.array(x)
+                    y = np.array(y)
+                    inshape = np.shape(x)
                 xy =  mplot.transform_points(proj_cart,x,y) 
-                if np.shape(inshape)[0] == 1: ### 1d input:
+                if np.shape(inshape)[0] == 0: ### 0d input:
+                    x = xy[0,0]
+                    y = xy[0,1]
+                elif np.shape(inshape)[0] == 1: ### 1d input:
                     x = xy[:,0]
                     y = xy[:,1]
                 else:
@@ -86,6 +111,23 @@ class grid_set:
             if a == 'xptp':
                 self.get_ptp()
                 break
+    
+    def lims_from_lonlat(self,points,for_extent = False):
+        x,y = self.mplot(points[0][0],points[0][1])
+        x1,x2 = copy.copy(x),copy.copy(x)
+        y1,y2 = copy.copy(y),copy.copy(y)
+        if len(points) < 2:
+            print('We need more than one point to create limits')
+        for p in points[1:]:
+            x,y = self.mplot(p[0],p[1])
+            x1 = np.minimum(x1,x)
+            x2 = np.maximum(x2,x)
+            y1 = np.minimum(y1,y)
+            y2 = np.maximum(y2,y)
+        if for_extent:
+            return [x1,x2, y1,y2]
+        else:
+            return (x1,x2), (y1,y2)
   
     def set_grid_lon_lat(self,lons,lats,grid_list = False,fill_lonlat = False):
        # creates a grid depending on wanted resolution 
@@ -114,29 +156,11 @@ class grid_set:
                 self.dxRes = np.mean(np.diff(xpts[0,:]))
                 self.dyRes = np.mean(np.diff(ypts[:,0]))
                 self.m,self.n = np.shape(lons)
-                self.shape = (self.m,self.n)
                 self.grid = True
                 print("Got a grid res = ",self.m," x ",self.n)
                 print("Note that all grid info is in nx x ny grids, whilst data is in nx x ny")
         else: print("Projection not defined yet, do that first")
-            
-    def get_ptp(self):
-        """
-        Generates pts arrays for pcolor and pcolormesh - midpoitns for grid areas
-        """
-        if self.grid:
-            # extend longitude by 2
-            xpt_pad = np.pad(self.xpts, ((1,0),(0,0)), 'edge')
-            ypt_pad = np.pad(self.ypts, ((0,0),(1,0)), 'edge')
-            self.xptp = xpt_pad[:-1,:]+0.5*(np.diff(xpt_pad,axis=0))
-            self.yptp = ypt_pad[:,:-1]+0.5*(np.diff(ypt_pad,axis=1))
-#             xpt_pad = np.pad(self.xpts, ((0,0),(1,0)), 'edge')
-#             ypt_pad = np.pad(self.ypts, ((1,0),(0,0)), 'edge')
-#             self.xptp = xpt_pad[:,:-1]+0.5*(np.diff(xpt_pad,axis=0))
-#             self.yptp = ypt_pad[:-1,:]+0.5*(np.diff(ypt_pad,axis=1))
-            
-       
-
+    
     def set_grid_dxy(self,dxRes,dyRes,ax=None):
        # creates a grid depending on wanted resolution 
         if hasattr(self,'ccrs'):
@@ -163,7 +187,6 @@ class grid_set:
         self.grid = True
         self.m = nx
         self.n = ny
-        self.shape = (self.m,self.n)
         print("Got a grid res = ",nx," x ",ny)
         print("Note that all grid info is in nx x ny grids, whilst data is in nx x ny")
 
@@ -191,7 +214,6 @@ class grid_set:
         self.grid = True
         self.m = nx
         self.n = ny
-        self.shape = (self.m,self.n)
         print("Got a grid res = ",nx," x ",ny)
         
     def set_gate_grid(self,lonG,latG,npoints=100,aspect=100,res=None):
@@ -243,7 +265,6 @@ class grid_set:
         self.grid = True
         self.m = npoints
         self.n = 2
-        self.shape = (self.m,self.n)
         print("Got a gate res = ",self.m," ({:g} m)".format(self.dxRes),
               " x ",self.n)
 
@@ -399,15 +420,69 @@ class grid_set:
             print('Angles calculated')
             self.gridinfo = True
         else: print("Grid not defined yet, do that first")
+            
+    @property
+    def limits(self):
+        return [
+            np.min(self.xpts),np.max(self.xpts),
+            np.min(self.ypts),np.max(self.ypts),
+                ]
+        
 
+    #### these are midpoints for plotting 
+    @property
+    def xptp(self):
+        if not hasattr(self,'_xptp'):
+            self.get_ptp()
+        return self._xptp
+    
+    @property
+    def yptp(self):
+        if not hasattr(self,'_yptp'):
+            self.get_ptp()
+        return self._yptp
+    
+    def get_ptp(self):
+        """
+        Generates pts arrays for pcolor and pcolormesh - midpoitns for grid areas
+        """
+        if self.grid:
+            # extend longitude by 2
+            xpt_pad = np.pad(self.xpts, ((1,0),(0,0)), 'edge')
+            ypt_pad = np.pad(self.ypts, ((0,0),(1,0)), 'edge')
+            self._xptp = xpt_pad[:-1,:]+0.5*(np.diff(xpt_pad,axis=0))
+            self._yptp = ypt_pad[:,:-1]+0.5*(np.diff(ypt_pad,axis=1))
+#             xpt_pad = np.pad(self.xpts, ((0,0),(1,0)), 'edge')
+#             ypt_pad = np.pad(self.ypts, ((1,0),(0,0)), 'edge')
+#             self.xptp = xpt_pad[:,:-1]+0.5*(np.diff(xpt_pad,axis=0))
+#             self.yptp = ypt_pad[:-1,:]+0.5*(np.diff(ypt_pad,axis=1))
+            
+    
+    #### these are square points for plotting 
+    @property
+    def xsq(self):
+        if not hasattr(self,'_xsq'):
+            self.get_square_points()
+        return self._xsq
+    
+    @property
+    def ysq(self):
+        if not hasattr(self,'_ysq'):
+            self.get_square_points()
+        return self._ysq
+    
 
     def get_square_points(self):
         """
         makes the xsq,ysq fields that will let you plot on a square grid
         uses np.meshgrid to make location arrasy statring lower left at (0,0)
         """
-        self.xsq,self.ysq = np.meshgrid(np.linspace(0,1,self.m),np.linspace(0,1,self.n),indexing = 'ij')
+        self._xsq,self._ysq = np.meshgrid(np.linspace(0,1,self.m),np.linspace(0,1,self.n),indexing = 'ij')
 
+    @property
+    def area(self):
+        return self.xdist*self.ydist
+        
     def check_angles(self,point=False,scale=1.0,project = False):
         # return np.hypot of con/sin, min/max and mean
         check_ang = np.hypot(self.ang_c,self.ang_s)**2
@@ -552,6 +627,8 @@ class grid_set:
         self.dyRes = npzfile["dyRes"] 
         self.m = npzfile["m"] 
         self.n = npzfile["n"] 
+        if type(self.m) == np.ndarray: self.m = self.m[()]
+        if type(self.n) == np.ndarray: self.n = self.n[()]
         self.ang_c = npzfile["ang_c"] 
         self.ang_s = npzfile["ang_s"] 
         self.xdist = npzfile["xdist"] 

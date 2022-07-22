@@ -35,3 +35,36 @@ def gs_from_CMIP(m,filename,opt,grid_list=False):
 
     G.set_grid_lon_lat(lon_in,lat_in,grid_list=grid_list)
     return G
+
+
+
+class accumulator:
+    def __init__(self,shape):
+        self.count = np.zeros(shape,dtype = int)
+        self.data = np.ma.masked_all(shape)
+        self.data[:] = 0.0
+        self.data.mask[:] = True
+        
+    def update(self,new_data,mask=None,count_all = True):
+        new_mask = np.isnan(new_data)
+        if mask is not None:
+            new_mask[mask] = True
+        self.data.mask[~new_mask] = False
+        self.data[~new_mask] += new_data[~new_mask]
+        if count_all: self.count += 1
+        else: self.count += ~new_mask
+    
+    def clean(self):
+        self.count[:] = 0
+        self.data[:] = 0.0
+        self.data.mask[:] = True
+        
+    def mean(self):
+        out_array = self.data.data/self.count
+        out_array[self.data.mask] = np.nan
+        return out_array
+        
+    def total(self):
+        out_array = self.data.data
+        out_array[self.data.mask] = np.nan
+        return out_array

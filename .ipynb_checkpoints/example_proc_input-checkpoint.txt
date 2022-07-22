@@ -1,0 +1,6 @@
+CMIP processing input option file
+CMIP6_path: /badc/cmip6/data/CMIP6/ScenarioMIP/CCCma/CanESM5/ssp585/r1i1p2f1
+Output_path: ~/path/to/your/own/ssp585/CCCma/CanESM5/r1i1p2f1
+orientation_option: 1
+Extra options go after here
+swflux_grid: 1
