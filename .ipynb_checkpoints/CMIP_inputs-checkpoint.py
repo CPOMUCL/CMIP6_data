@@ -3,6 +3,7 @@ import numpy as np
 import datetime as dt
 import struct
 import glob
+import gc
 from dateutil.relativedelta import relativedelta
 from netCDF4 import Dataset
 from os.path import exists
@@ -227,6 +228,8 @@ class CMIP6_daily():
                     data_now = f_nc[fvar][t_ps]
                 data_now[data_now.mask]=np.nan
                 f_nc.close()
+                del f_nc
+                gc.collect()
             else:
                 fn+=1
         while load_again:
@@ -259,6 +262,8 @@ class CMIP6_daily():
                 data_extra = f_nc[fvar][t_ps]
             data_extra[data_extra.mask]=np.nan
             f_nc.close()
+            del f_nc
+            gc.collect()
             data_now = np.vstack((data_now,data_extra))
             
         if looking: 
@@ -592,6 +597,8 @@ class CMIP6_monthly():
                     data_now = f_nc[fvar][t_ps,:]
                 data_now[data_now.mask]=np.nan
                 f_nc.close()
+                del f_nc
+                gc.collect()
             else:
                 fn+=1
         while load_again:
@@ -633,6 +640,8 @@ class CMIP6_monthly():
                 data_extra = f_nc[fvar][t_ps,:]
             data_extra[data_extra.mask]=np.nan
             f_nc.close()
+            del f_nc
+            gc.collect()
             data_now = np.vstack((data_now,data_extra))
             
         if looking: 
